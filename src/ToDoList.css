@@ -1,0 +1,216 @@
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #4CAF50;
+    --danger-color: #ff4444;
+    --priority-high: #ff4444;
+    --priority-medium: #ffbb33;
+    --priority-low: #00C851;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 100px;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.task-input,
+.date-input,
+.priority-select,
+.category-select,
+.search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.add-task-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.add-task-btn:hover {
+    opacity: 0.9;
+}
+
+.search-container {
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: .5rem;
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+}
+
+.completed {
+    opacity: 0.8;
+    background-color:  rgb(50, 55, 57);
+    font-weight: bold;
+  
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.task-details {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.category-tag {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.priority-high { border-left: 4px solid var(--priority-high); }
+.priority-medium { border-left: 4px solid var(--priority-medium); }
+.priority-low { border-left: 4px solid var(--priority-low); }
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+}
+.delete-all-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.delete-all-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 1s;
+   
+}
+
+.delete-all-btn:hover {
+    opacity: 0.6;
+    
+    
+    
+    background-color: #e90606;
+}
+
+
+.toggle-btn,
+.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+}
+
+.no-tasks {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Category Colors */
+.general { background-color: #4a4a4a; }
+.work { background-color: #0066cc; }
+.personal { background-color: #6600cc; }
+.shopping { background-color: #cc6600; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-buttons {
+        margin-top: 1rem;
+        align-self: flex-end;
+    }
+}
